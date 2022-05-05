@@ -31,7 +31,9 @@
     "start": "npm run clean && gatsby develop",
     "test": "jest --config ./internal/testing/jest-config.ts",
     "test:coverage": "jest --coverage --config ./internal/testing/jest-config.ts",
-    "test:watch": "jest --watch --config ./internal/testing/jest-config.ts"
+    "test:watch": "jest --watch --config ./internal/testing/jest-config.ts",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -b master"
+
   },
   "commitlint": {
     "extends": [
@@ -116,6 +118,7 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "gh-pages": "^3.2.3",
     "husky": "7.0.4",
     "identity-obj-proxy": "3.0.0",
     "jest": "^27.5.1",

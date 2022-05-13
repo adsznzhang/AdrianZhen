@@ -12,6 +12,7 @@ import { AllMarkdownRemark, PageContext } from "@/types";
 
 interface Props {
   data: {
+  totalCount:number;
     allMarkdownRemark: AllMarkdownRemark;
   };
   pageContext: PageContext;
@@ -24,10 +25,10 @@ const IndexTemplate: React.FC<Props> = ({ data, pageContext }: Props) => {
   const { currentPage, hasNextPage, hasPrevPage, prevPagePath, nextPagePath } =
     pagination;
 
-  const { edges } = data.allMarkdownRemark;
+  const {edges,totalCount } = data.allMarkdownRemark;
   const pageTitle =
     currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle;
-
+    const total = Math.ceil(totalCount / 4)
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
       <Sidebar isIndex />
@@ -38,6 +39,8 @@ const IndexTemplate: React.FC<Props> = ({ data, pageContext }: Props) => {
           nextPagePath={nextPagePath}
           hasPrevPage={hasPrevPage}
           hasNextPage={hasNextPage}
+          currentPage={currentPage}
+          numPages={total}
         />
       </Page>
     </Layout>
@@ -52,6 +55,7 @@ export const query = graphql`
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { template: { eq: "post" }, draft: { ne: true } } }
     ) {
+      totalCount
       edges {
         node {
           fields {

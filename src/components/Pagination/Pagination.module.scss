@@ -48,4 +48,31 @@
       }
     }
   }
+  .listcontainer {
+    @include margin(0, 0);
+
+    li {
+      display: inline;
+      @include margin(0, 0.15);
+
+      a {
+        font-weight: 600;
+        display: inline;
+        @include padding(0.25, 0.25);
+      }
+
+      a.selected {
+        color: $color-white;
+        background-color: $color-primary;
+        @include padding(0.25, 0.4);
+        border-radius: 3px;
+      }
+
+      p {
+        display: inline;
+        @include padding(0.25, 0);
+      }
+    }
+  }
+
 }

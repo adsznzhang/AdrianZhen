@@ -9,6 +9,8 @@ import { Pagination } from "@/components/Pagination";
 import { Sidebar } from "@/components/Sidebar";
 import { useSiteMetadata } from "@/hooks";
 import { AllMarkdownRemark, PageContext } from "@/types";
+import { tagPagePath} from '@/utils/page-path';
+import _ from "lodash";
 
 interface Props {
   data: {
@@ -19,17 +21,16 @@ interface Props {
 
 const TagTemplate: React.FC<Props> = ({ data, pageContext }: Props) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
-
   const { group, pagination } = pageContext;
-  const { currentPage, prevPagePath, nextPagePath, hasPrevPage, hasNextPage } =
+  
+  const { total,currentPage, prevPagePath, nextPagePath, hasPrevPage, hasNextPage } =
     pagination;
-
-  const { edges } = data.allMarkdownRemark;
+  const { edges} = data.allMarkdownRemark;
   const pageTitle =
     currentPage > 0
       ? `${group} - Page ${currentPage} - ${siteTitle}`
       : `${group} - ${siteTitle}`;
-
+      const tagSlug = `/tag/${_.kebabCase(group)}/`;
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
       <Sidebar />
@@ -40,6 +41,9 @@ const TagTemplate: React.FC<Props> = ({ data, pageContext }: Props) => {
           nextPagePath={nextPagePath}
           hasPrevPage={hasPrevPage}
           hasNextPage={hasNextPage}
+          numPages={total}
+          currentPage={currentPage}
+          pagePath={tagPagePath.bind(null,tagSlug)}
         />
       </Page>
     </Layout>
@@ -54,7 +58,7 @@ export const query = graphql`
         subtitle
       }
     }
-    allMarkdownRemark(
+    allMarkdownRemark(     
       limit: $limit
       skip: $offset
       filter: {

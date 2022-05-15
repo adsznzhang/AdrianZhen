@@ -9,10 +9,10 @@ import { Pagination } from "@/components/Pagination";
 import { Sidebar } from "@/components/Sidebar";
 import { useSiteMetadata } from "@/hooks";
 import { AllMarkdownRemark, PageContext } from "@/types";
+import { postPagePath} from '@/utils/page-path';
 
 interface Props {
   data: {
-  totalCount:number;
     allMarkdownRemark: AllMarkdownRemark;
   };
   pageContext: PageContext;
@@ -22,13 +22,13 @@ const IndexTemplate: React.FC<Props> = ({ data, pageContext }: Props) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
 
   const { pagination } = pageContext;
-  const { currentPage, hasNextPage, hasPrevPage, prevPagePath, nextPagePath } =
+  const {total,currentPage, hasNextPage, hasPrevPage, prevPagePath, nextPagePath } =
     pagination;
-
-  const {edges,totalCount } = data.allMarkdownRemark;
+  
+  const {edges} = data.allMarkdownRemark;
   const pageTitle =
     currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle;
-    const total = Math.ceil(totalCount / 4)
+
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
       <Sidebar isIndex />
@@ -41,6 +41,7 @@ const IndexTemplate: React.FC<Props> = ({ data, pageContext }: Props) => {
           hasNextPage={hasNextPage}
           currentPage={currentPage}
           numPages={total}
+          pagePath={postPagePath}
         />
       </Page>
     </Layout>
@@ -55,7 +56,6 @@ export const query = graphql`
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { template: { eq: "post" }, draft: { ne: true } } }
     ) {
-      totalCount
       edges {
         node {
           fields {

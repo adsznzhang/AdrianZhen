@@ -6,5 +6,7 @@ export default {
     nextPagePath: "/typography/page/3",
     hasNextPage: true,
     hasPrevPage: true,
+    total:5,
+    group:'typoraphy',
   },
 };

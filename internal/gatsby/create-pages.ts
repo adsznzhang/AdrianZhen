@@ -79,6 +79,7 @@ const createPages: GatsbyNode["createPages"] = async ({ graphql, actions }) => {
           nextPagePath: getPaginationPath(path, utils.increment(page)),
           hasNextPage: page !== utils.decrement(total),
           hasPrevPage: page !== 0,
+          total
         },
       },
     });

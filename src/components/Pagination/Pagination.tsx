@@ -14,6 +14,7 @@ type Props = {
   hasPrevPage: boolean;
   numPages:number;
   currentPage:number;
+  pagePath:any;
 
 };
 
@@ -24,6 +25,8 @@ const Pagination = ({
   hasPrevPage,
   numPages,
   currentPage,
+  pagePath,
+  
 }: Props) => {
   const prevClassName = classNames(styles.previousLink, {
     [styles.disable]: !hasPrevPage,
@@ -33,7 +36,6 @@ const Pagination = ({
     [styles.disable]: !hasNextPage,
   });
 
-  const pagePath = (page:any) => (page <= 1 ? '/' : `/page/${page-1}/`);
   let pageNumbers = [];
 
   // If there are <= 7 pages, we'll never need an ellipsis.

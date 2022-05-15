@@ -4,7 +4,8 @@ interface Pagination {
   nextPagePath: string;
   hasPrevPage: boolean;
   hasNextPage: boolean;
-  numPages:number;
+  total:number;
+  group:any;
 }
 
 export default Pagination;

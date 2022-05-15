@@ -9,6 +9,8 @@ import { Pagination } from "@/components/Pagination";
 import { Sidebar } from "@/components/Sidebar";
 import { useSiteMetadata } from "@/hooks";
 import { AllMarkdownRemark, PageContext } from "@/types";
+import _ from "lodash";
+import { catPagePath } from "@/utils/page-path";
 
 interface Props {
   data: {
@@ -21,7 +23,7 @@ const CategoryTemplate: React.FC<Props> = ({ data, pageContext }: Props) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
 
   const { group, pagination } = pageContext;
-  const { currentPage, prevPagePath, nextPagePath, hasPrevPage, hasNextPage } =
+  const { total,currentPage, prevPagePath, nextPagePath, hasPrevPage, hasNextPage } =
     pagination;
 
   const { edges } = data.allMarkdownRemark;
@@ -29,7 +31,7 @@ const CategoryTemplate: React.FC<Props> = ({ data, pageContext }: Props) => {
     currentPage > 0
       ? `${group} - Page ${currentPage} - ${siteTitle}`
       : `${group} - ${siteTitle}`;
-
+      const catSlug = `/category/${_.kebabCase(group)}/`;
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
       <Sidebar />
@@ -40,6 +42,9 @@ const CategoryTemplate: React.FC<Props> = ({ data, pageContext }: Props) => {
           nextPagePath={nextPagePath}
           hasPrevPage={hasPrevPage}
           hasNextPage={hasNextPage}
+          currentPage={currentPage}
+          numPages={total}
+          pagePath={catPagePath.bind(null,catSlug)}
         />
       </Page>
     </Layout>

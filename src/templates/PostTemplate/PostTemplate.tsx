@@ -6,6 +6,8 @@ import { Layout } from "@/components/Layout";
 import { Post } from "@/components/Post";
 import { useSiteMetadata } from "@/hooks";
 import { Node } from "@/types";
+import { Menu} from "@/components/Sidebar/Menu";
+import { NavHeader } from "@/components/NavHeader";
 
 interface Props {
   data: {
@@ -14,19 +16,22 @@ interface Props {
 }
 
 const PostTemplate: React.FC<Props> = ({ data }: Props) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+  const { title: siteTitle, subtitle: siteSubtitle, menu} = useSiteMetadata();
   const { frontmatter } = data.markdownRemark;
   const { title, description = "", socialImage } = frontmatter;
   const metaDescription = description || siteSubtitle;
-
+console.log(menu)
   return (
-    <Layout
+
+      <>
+    <NavHeader  />
+      <Layout
       title={`${title} - ${siteTitle}`}
       description={metaDescription}
       socialImage={socialImage}
     >
       <Post post={data.markdownRemark} />
-    </Layout>
+    </Layout></>
   );
 };
 

@@ -23,9 +23,9 @@ const Post: React.FC<Props> = ({ post }: Props) => {
 
   return (
     <div className={styles.post}>
-      <Link className={styles.button} to="/">
+      {/* <Link className={styles.button} to="/">
         All Articles
-      </Link>
+      </Link> */}
 
       <div className={styles.content}>
         <Content body={html} title={title} />

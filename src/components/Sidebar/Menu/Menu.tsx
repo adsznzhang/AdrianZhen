@@ -9,14 +9,16 @@ type Props = {
     label: string;
     path: string;
   }>;
+  style:React.CSSProperties
+  style1:React.CSSProperties
 };
 
-const Menu: React.FC<Props> = ({ menu }: Props) => (
+const Menu: React.FC<Props> = ({menu,style1,style }: Props) => (
   <nav className={styles.menu}>
     <ul className={styles.list}>
       {menu.map((item) => (
-        <li className={styles.item} key={item.path}>
-          <Link
+        <li style={style}  className={styles.item} key={item.path}>
+          <Link style={style1}
             to={item.path}
             className={styles.link}
             activeClassName={styles.active}

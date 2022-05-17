@@ -20,6 +20,9 @@ const NavHeader = () => {
           <Nav.Item as="li">
             <Link to="/pages/contacts" className="nav-link" activeClassName="active">Contact</Link>
           </Nav.Item>
+          <Nav.Item as="li">
+            <Link to="/tags" className="nav-link" activeClassName="active">Tags</Link>
+          </Nav.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

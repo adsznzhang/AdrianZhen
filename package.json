@@ -33,7 +33,6 @@
     "test:coverage": "jest --coverage --config ./internal/testing/jest-config.ts",
     "test:watch": "jest --watch --config ./internal/testing/jest-config.ts",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public -b main"
-
   },
   "commitlint": {
     "extends": [
@@ -78,6 +77,7 @@
     "gatsby-transformer-sharp": "^4.13.0",
     "prismjs": "^1.28.0",
     "react": "^17.0.2",
+    "react-bootstrap": "^2.4.0",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0"
   },

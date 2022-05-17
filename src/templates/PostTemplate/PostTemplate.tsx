@@ -6,8 +6,8 @@ import { Layout } from "@/components/Layout";
 import { Post } from "@/components/Post";
 import { useSiteMetadata } from "@/hooks";
 import { Node } from "@/types";
-import { Menu} from "@/components/Sidebar/Menu";
-import { NavHeader } from "@/components/NavHeader";
+import { NavHeader } from "@/components/NavHeader"
+import {Comments} from "@/components/Comment"
 
 interface Props {
   data: {
@@ -24,13 +24,14 @@ console.log(menu)
   return (
 
       <>
-    <NavHeader  />
+      <NavHeader />
       <Layout
       title={`${title} - ${siteTitle}`}
       description={metaDescription}
       socialImage={socialImage}
     >
       <Post post={data.markdownRemark} />
+      <Comments />
     </Layout></>
   );
 };

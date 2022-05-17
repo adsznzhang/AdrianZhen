@@ -1,22 +1,31 @@
+import { Link } from "gatsby";
 import React from "react";
 
-import { useSiteMetadata } from "@/hooks";
-
-import { Menu } from "../Sidebar/Menu";
-
-import * as styles from "./NavHeader.module.scss";
-
+import { Container, Nav, Navbar } from "react-bootstrap";
 
 
 const NavHeader = () => {
 
-  const { menu } = useSiteMetadata();
   return (
-      <div className={styles.header} >
-        <div className={styles.right}>
-        <Menu style1={{margin:"10px", fontWeight:"bold"}} style={{display: "inline-block",padding:"0",margin:"0",textAlign:"right"}} menu={menu} />
-      </div>
-      </div>
+    <header className="bg-dark">
+      <Container>
+    <Navbar expand="md" variant="dark">
+      <Navbar.Brand href="/">Home</Navbar.Brand>
+      <Navbar.Toggle aria-controls="navbarResponsive"/>
+      <Navbar.Collapse id="navbarResponsive">
+        <Nav as="ul">
+          <Nav.Item as="li">
+            <Link to="/pages/about" className="nav-link" activeClassName="active">About</Link>
+          </Nav.Item>
+          <Nav.Item as="li">
+            <Link to="/pages/contacts" className="nav-link" activeClassName="active">Contact</Link>
+          </Nav.Item>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+    </Container>
+    </header>
+    
   );
 };
 

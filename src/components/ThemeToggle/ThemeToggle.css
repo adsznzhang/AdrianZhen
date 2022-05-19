@@ -29,7 +29,7 @@
   width: 26px;
 }
 input:checked + .slider {
-  background-color: #378337;
+  background-color: #0a0a0a;
 }
 input:checked + .slider:before {
   transform: translateX(26px);
@@ -53,7 +53,7 @@ body {
 body.dark {
   -webkit-font-smoothing: antialiased;
 
-  --bg: darkslategray;
+  --bg: rgb(0, 0, 0);
   --textNormal: rgba(255, 255, 255, 0.88);
   --textTitle: white;
   --textLink: yellow;

@@ -11,6 +11,7 @@ import { Meta } from "./Meta";
 import { Tags } from "./Tags";
 
 import * as styles from "./Post.module.scss";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 interface Props {
   post: Node;
@@ -23,10 +24,10 @@ const Post: React.FC<Props> = ({ post }: Props) => {
 
   return (
     <div className={styles.post}>
-      {<Link className={styles.button} to="/">
+      {   <div ><Link className={styles.button} to="/">
         Home
-      </Link> }
-
+      </Link> <ThemeToggle /> </div>}
+    
       <div className={styles.content}>
         <Content body={html} title={title} />
       </div>

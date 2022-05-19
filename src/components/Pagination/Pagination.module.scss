@@ -43,7 +43,7 @@
       }
 
       &.disable {
-        color: color.adjust($color-gray, $whiteness: 20%);
+        color: $color-gray;
         pointer-events: none;
       }
     }

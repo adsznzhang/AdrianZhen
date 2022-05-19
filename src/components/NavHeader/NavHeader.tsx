@@ -2,6 +2,7 @@ import { Link } from "gatsby";
 import React from "react";
 
 import { Container, Nav, Navbar } from "react-bootstrap";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 
 const NavHeader = () => {
@@ -25,6 +26,7 @@ const NavHeader = () => {
           </Nav.Item>
         </Nav>
       </Navbar.Collapse>
+      <ThemeToggle/>
     </Navbar>
     </Container>
     </header>

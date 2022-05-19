@@ -192,6 +192,7 @@ export default {
     },
     "gatsby-plugin-image",
     "gatsby-plugin-catch-links",
+    'gatsby-plugin-dark-mode',
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-optimize-svgs",
     "gatsby-plugin-sass",

@@ -1,7 +1,7 @@
 {
   "title": "Blog by Adrian Zhen",
   "url": "https://adrianzhen.gatsbyjs.io",
-  "subtitle": "Full of Passion",
+  "subtitle": "Full of Passion and Keen to Learn!",
   "copyright": "© All rights reserved.",
   "googleAnalyticsId": "UA-73379983-2",
   "disqusShortname": "",
@@ -9,7 +9,7 @@
   "pathPrefix": "/",
   "menu": [
     {
-      "label": "Articles",
+      "label": "Posts",
       "path": "/"
     },
     {
@@ -27,7 +27,7 @@
   "author": {
     "name": "Adrian Zhen",
     "photo": "/photo.jpg",
-    "bio": "Full of Passion",
+    "bio": "Full of Passion and Keen to Learn!!",
     "contacts": {
       "rss": "",
       "email": "adszn@hotmail.com",

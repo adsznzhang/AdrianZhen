@@ -19,7 +19,8 @@
     },
     "noEmit": true,
     "strict": true,
-    "allowJs": false,
+    "allowJs": true,
+    "checkJs": false,
     "sourceMap": true,
     "skipLibCheck": true,
     "noUnusedLocals": true,
@@ -32,5 +33,5 @@
     "forceConsistentCasingInFileNames": true
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx", "src/components/ThemeToggle/ThemeToggle.js"]
 }

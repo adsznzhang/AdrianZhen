@@ -8,18 +8,20 @@ import { Copyright } from "./Copyright";
 import { Menu } from "./Menu";
 
 import * as styles from "./Sidebar.module.scss";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 type Props = {
   isIndex?: boolean;
 };
-
+console.log(ThemeToggle)
 const Sidebar = ({ isIndex }: Props) => {
   const { author, copyright, menu } = useSiteMetadata();
   return (
     <div className={styles.sidebar}>
       <div className={styles.inner}>
+       <ThemeToggle /> 
         <Author author={author} isIndex={isIndex} />
-        <Menu style1={{}} style={{display: "block"}} menu={menu} />
+        <Menu  menu={menu} />
         <Contacts contacts={author.contacts} />
         <Copyright copyright={copyright} />
       </div>

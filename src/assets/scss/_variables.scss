@@ -1,6 +1,22 @@
 @use "sass:math";
 @use "sass:color";
 
+body {
+$color-base: hsl(0, 0%, 13%);
+$color-primary: #164BC5;
+$color-secondary: hsl(31, 92%, 62%);
+$typographic-base-font-color: $color-base;
+$typographic-link-p-font-color: $color-primary;
+$typographic-link-s-font-color: $color-secondary;
+  }
+  body.dark {
+ $color-base: hsl(0, 36%, 95%);
+$color-primary: #05bb33;
+$color-secondary: hsl(0, 86%, 46%);
+$typographic-base-font-color: $color-base;
+$typographic-link-p-font-color: $color-primary;
+$typographic-link-s-font-color: $color-secondary;
+  }
 $color-base: hsl(0, 0%, 13%);
 $color-primary: #164BC5;
 $color-secondary: hsl(31, 92%, 62%);

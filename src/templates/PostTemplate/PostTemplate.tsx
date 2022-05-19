@@ -24,7 +24,6 @@ console.log(menu)
   return (
 
       <>
-      <NavHeader />
       <Layout
       title={`${title} - ${siteTitle}`}
       description={metaDescription}

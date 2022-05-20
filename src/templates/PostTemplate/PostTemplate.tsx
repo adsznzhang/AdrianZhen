@@ -6,7 +6,6 @@ import { Layout } from "@/components/Layout";
 import { Post } from "@/components/Post";
 import { useSiteMetadata } from "@/hooks";
 import { Node } from "@/types";
-import { NavHeader } from "@/components/NavHeader"
 import {Comments} from "@/components/Comment"
 
 interface Props {

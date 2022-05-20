@@ -11,10 +11,6 @@ You can contact me through email adszn@hotmail.com or adsznzhang@gmail.com. You 
 
 _Write a description of something._
 
-## Header Level 2
-
-It seems like i don't have enough information to put here...
-
 - **Important** Safety.
 - Work Smart.
 - Alwasy ask if you dont know.

@@ -4,6 +4,8 @@ import type { Nullable } from "@/types";
 
 import * as styles from "./Page.module.scss";
 
+import {Comments} from "@/components/Comment"
+
 interface Props {
   title?: string;
   children: React.ReactNode;
@@ -23,6 +25,7 @@ const Page: React.FC<Props> = ({ title, children }: Props) => {
       <div className={styles.inner}>
         {title && <h1 className={styles.title}>{title}</h1>}
         <div className={styles.body}>{children}</div>
+        <Comments/>
       </div>
     </div>
   );

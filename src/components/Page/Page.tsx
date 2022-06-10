@@ -4,7 +4,8 @@ import type { Nullable } from "@/types";
 
 import * as styles from "./Page.module.scss";
 
-import {Comments} from "@/components/Comment"
+import {Comments} from "@/components/Comment";
+import GoogleTranslate from "@/components/GoogleTranslate/GoogleTranslate"
 
 interface Props {
   title?: string;
@@ -22,10 +23,12 @@ const Page: React.FC<Props> = ({ title, children }: Props) => {
 
   return (
     <div ref={pageRef} className={styles.page}>
+      <GoogleTranslate/>
       <div className={styles.inner}>
         {title && <h1 className={styles.title}>{title}</h1>}
         <div className={styles.body}>{children}</div>
         <Comments/>
+      
       </div>
     </div>
   );

@@ -12,6 +12,7 @@ import { Tags } from "./Tags";
 
 import * as styles from "./Post.module.scss";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import GoogleTranslate from "../GoogleTranslate/GoogleTranslate";
 
 interface Props {
   post: Node;
@@ -24,10 +25,11 @@ const Post: React.FC<Props> = ({ post }: Props) => {
 
   return (
     <div className={styles.post}>
-      {   <div ><Link className={styles.button} to="/">
+        <GoogleTranslate/>
+       {   <div style={{float:'right',display:'block',border:'1px solid gray',borderRadius:'20px',padding:'0.5em',position:'sticky'}}  ><Link   to="/">
         Home
-      </Link> <ThemeToggle /> </div>}
-    
+      </Link></div>}
+    <ThemeToggle/>
       <div className={styles.content}>
         <Content body={html} title={title} />
       </div>

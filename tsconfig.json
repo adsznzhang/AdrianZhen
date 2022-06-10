@@ -33,5 +33,5 @@
     "forceConsistentCasingInFileNames": true
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "src/components/ThemeToggle/ThemeToggle.js"]
+  "include": ["**/*.ts", "**/*.tsx", "src/components/ThemeToggle/ThemeToggle.js", "src/components/GoogleTranslate/GoogleTranslate.js"]
 }

@@ -1,5 +1,5 @@
 ---
-title: "UE5 UE5基础知识2"
+title: "UE5基础知识2"
 date: "2022-06-11T08:12:03.284Z"
 template: "post"
 draft: false

@@ -9,7 +9,7 @@ tags:
   - "Tech"
   - "UE5"
   - "SideProject"
-description: "对ProceduralMeshComponent参数的一些解释"
+description: "主要是了解虚幻引擎里的宏参数设置，蓝图和C++之间的逻辑"
 socialImage: "https://raw.githubusercontent.com/adsznzhang/PicBed/main/imgVoxelPluginUE5.jpg"
 ---
 1. 虚幻引擎类之前的"A"和"U"，

@@ -1,5 +1,5 @@
 ---
-title: "UE5 解释UE基础知识1"
+title: "UE5基础知识1"
 date: "2022-06-10T08:12:03.284Z"
 template: "post"
 draft: false
@@ -9,7 +9,7 @@ tags:
   - "Tech"
   - "UE5"
   - "SideProject"
-description: "对ProceduralMeshComponent参数的一些解释"
+description: "主要介绍了基本的虚幻引擎和C++相关的一些必须要了解的知识点"
 socialImage: "https://raw.githubusercontent.com/adsznzhang/PicBed/main/imgVoxelPluginUE5.jpg"
 ---
 #### Class and Inheritance 类和继承

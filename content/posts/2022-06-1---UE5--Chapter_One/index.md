@@ -23,7 +23,7 @@ socialImage: "https://raw.githubusercontent.com/adsznzhang/PicBed/main/imgVoxelP
 
 解决了环境搭建问题后，第一步我直接就跟着视频做了，和Unity里面对一个立方体的渲染非常相似！[Unity传送门](https://github.com/b3agz/Code-A-Game-Like-Minecraft-In-Unity)我觉得里面有特别值得借鉴的地方，暂时还没有开始他的代码。
 #### VoxelCube.h头文件
-```c++
+```cpp
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
@@ -84,7 +84,7 @@ public:
 };
 ```
 #### VoxcelCube.cpp源文件
-```c++
+```cpp
 // Fill out your copyright notice in the Description page of Project Settings.
 
 

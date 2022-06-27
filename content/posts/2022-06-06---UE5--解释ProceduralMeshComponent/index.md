@@ -24,7 +24,7 @@ socialImage: "https://raw.githubusercontent.com/adsznzhang/PicBed/main/imgVoxelP
 
 这次我们依旧使用ProceduralMeshComonent,但是更为简单一些，在UE5中创建一个空的C++UE5项目，然后创建一个C++类 继承AActor，然后再定义必须的一些参数：
 #### VoxelCube.h头文件
-```c++
+```cpp
 #pragma once
 
 #include "CoreMinimal.h"
@@ -59,7 +59,7 @@ protected:
 
 
 #### VoxcelCube.cpp源文件
-```c++
+```cpp
 #include "ProcMesh.h"
 
 AProcMesh::AProcMesh()

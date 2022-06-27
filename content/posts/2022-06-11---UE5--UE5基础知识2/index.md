@@ -30,7 +30,7 @@ socialImage: "https://raw.githubusercontent.com/adsznzhang/PicBed/main/imgVoxelP
 **下面是在Unreal Engine中创建的继承于Object的类**
 
 MyObject.h头文件
-```c++
+```cpp
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
@@ -51,7 +51,7 @@ public:
 }
 ```
 MyObject.cpp源文件
-```c++
+```cpp
 #include "MyObject.h"
 
 UMyObject::UMyObject()

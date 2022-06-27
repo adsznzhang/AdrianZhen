@@ -18,7 +18,7 @@ socialImage: "https://raw.githubusercontent.com/adsznzhang/PicBed/main/imgVoxelP
 - 对类的命名要具有代表性！比如在C++类创建一个Floater，如果使用Blueprint继承这个类，那么可以Floater_BP。当然你可以自己决定命名的方式，但要具有意义！  
 - 在C++类中使用UPEROPERTY宏，暴露UstaticMeshComponent 变量，同时还需要使用CreateDefaultSubobject模板来创建一个组件并赋值给变量。此时我们就能在蓝图类中看到创建的这一个StaticMeshComponent组件，并且可以为它进行赋值
 - 设置Actor的坐标使用SetActorLocation()函数，此函数接受FVector()构造函数，
-```C++
+```cpp
 SetActorLocation(FVector(0.0f,0.0f,0.0f));
 
 //or you can also do below
@@ -29,7 +29,7 @@ SetActorLocation(InitialLocation);
 
 - 通过UPROPERTY()可以把属性暴露给Blueprint. 下面的BlueprintReadWrite参数可以让变量在蓝图中Get和Set，EditInstanceOnly意思就是字面的意思，只有在实例上才能编辑，蓝图里的Default无法编辑。如果想在Default的细节中编辑变量，则需要添加EditDefaultsOnly这个参数。TIPS  按住Shift+F1可以跳出运行的游戏
 
-```c++
+```cpp
 public:	
 	// Sets default values for this actor's properties
 	AFloater();
@@ -58,7 +58,7 @@ public:
 - 物理模拟可以开启和关闭，默认是关闭
 - AddActorLocalOffset函数的第二个参数bSweep，是一个布尔值来决定是否sweep，进而控制碰撞的检测
 - AddActorLocalOffset函数的第三个参数是FHitResult,可以通过定义查看此参数。同时我们可以使用UE_LOG来打印我们所需要的信息：
-```c++
+```cpp
 void AFloater::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
